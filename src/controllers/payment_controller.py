@@ -2,7 +2,7 @@ from flask_restful import Resource
 from flask import request
 
 from src.database.session import Session
-from src.models.payment_model import PaymentModel
+from src.models.payment_model import CardModel
 from src.schemas.payment_schema import PaymentDeserializeSchema, PaymentSerializeSchema
 from src.utils.authorization import authorization
 
@@ -29,7 +29,7 @@ class PaymentController(Resource):
         # remember to paste the Bearer before the token
         
         session = Session()
-        new_payment = PaymentModel(**payment_create_dump)
+        new_payment = CardModel(**payment_create_dump)
         session.add(new_payment)
         session.commit()
 
@@ -41,7 +41,7 @@ class PaymentController(Resource):
         payment_schema = PaymentSerializeSchema()
 
         session = Session()
-        query = session.query(PaymentModel).filter(PaymentModel.user==kwargs["user"]["id"])
+        query = session.query(CardModel).filter(CardModel.user==kwargs["user"]["id"])
         session.close()
         
         payments = [payment_schema.dump(payment) for payment in query]
