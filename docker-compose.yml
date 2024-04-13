@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  note_db:
+    image: postgres:15-bullseye
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_PORT: 5432
+    ports:
+      - 6100:5432
+    networks:
+      - note_net
+    deploy:  
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 300M
+
+  note:
+    build: .
+    environment:
+      GUNICORN: false
+    volumes:
+      - .:/usr/app
+    ports:
+      - 6150:80
+    networks:
+      - note_net
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 300M
+    depends_on:
+      note_db:
+        condition: service_started
+
+networks:
+  note_net:
+    driver: bridge
+    name: note_net
