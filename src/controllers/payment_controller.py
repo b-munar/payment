@@ -35,7 +35,7 @@ class PaymentController(Resource):
 
         payment_created_schema = PaymentSerializeSchema()
         payment_created_dump = payment_created_schema.dump(new_payment)
-        return payment_created_dump, 201
+        return {"payment": {"card": payment_created_dump}}, 201
     
     def get(self, **kwargs):
         payment_schema = PaymentSerializeSchema()
@@ -45,5 +45,5 @@ class PaymentController(Resource):
         session.close()
         
         payments = [payment_schema.dump(payment) for payment in query]
-        return payments, 200
+        return {"payment": {"cards":payments}}, 200
 
