@@ -1,0 +1,71 @@
+{
+    "info": {
+        "_postman_id": "94089b52-9dcf-4017-a0d6-7bfc5fa7b895",
+        "name": "flask-payment",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Get Payments",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:6850/payment",
+                    "path": [
+                        "payment"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "6850"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5Y2I2M2EyZS03NmM1LTRiOGUtODQzNC1jZDczMzRhMTE3YjAiLCJpYXQiOjE3MTI5NzYwMTUsImV4cCI6MTcxMjk4NjgxNX0.mlRnhkO8SwrdYC9QVoj2oJIOfS0hWklPa8qWFpR09R4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Save Payments",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:6850/payment",
+                    "path": [
+                        "payment"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "6850"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n \"card\": \"1234 5678 9012 6789\",\n \"date\": \"12/24\",\n \"cvv\": \"123\",\n \"name\": \"name sportman card\"\n}"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5Y2I2M2EyZS03NmM1LTRiOGUtODQzNC1jZDczMzRhMTE3YjAiLCJpYXQiOjE3MTI5NzYwMTUsImV4cCI6MTcxMjk4NjgxNX0.mlRnhkO8SwrdYC9QVoj2oJIOfS0hWklPa8qWFpR09R4",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
