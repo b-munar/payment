@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  note_db:
+  payment_db:
     image: postgres:15-bullseye
     environment:
       POSTGRES_DB: postgres
@@ -9,35 +9,35 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_PORT: 5432
     ports:
-      - 6100:5432
+      - 6800:5432
     networks:
-      - note_net
+      - payment_net
     deploy:  
       resources:
         limits:
           cpus: '0.2'
           memory: 300M
 
-  note:
+  payment:
     build: .
     environment:
       GUNICORN: false
     volumes:
       - .:/usr/app
     ports:
-      - 6150:80
+      - 6850:80
     networks:
-      - note_net
+      - payment_net
     deploy:
       resources:
         limits:
           cpus: '0.2'
           memory: 300M
     depends_on:
-      note_db:
+      payment_db:
         condition: service_started
 
 networks:
-  note_net:
+  payment_net:
     driver: bridge
-    name: note_net
+    name: payment_net

@@ -1,10 +1,10 @@
 from marshmallow import Schema, fields
 
-class NoteDeserializeSchema(Schema):
-    note = fields.String(required=True)
+class PaymentDeserializeSchema(Schema):
+    payment = fields.String(required=True)
 
-class NoteSerializeSchema(Schema):
+class PaymentSerializeSchema(Schema):
     id = fields.UUID()
-    note = fields.String()
+    payment = fields.String()
     updateAt = fields.DateTime(format='%Y-%m-%dT%H:%M:%S%z')
     createdAt = fields.DateTime(format='%Y-%m-%dT%H:%M:%S%z')

@@ -176,7 +176,7 @@ files = [
     {file = "coverage-7.4.0-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:5b2ccb7548a0b65974860a78c9ffe1173cfb5877460e5a229238d985565574ae"},
     {file = "coverage-7.4.0-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:995ea5c48c4ebfd898eacb098164b3cc826ba273b3049e4a889658548e321b43"},
     {file = "coverage-7.4.0-cp310-cp310-win32.whl", hash = "sha256:79287fd95585ed36e83182794a57a46aeae0b64ca53929d1176db56aacc83451"},
-    {file = "coverage-7.4.0-cp310-cp310-win_amd64.whl", hash = "sha256:5b14b4f8760006bfdb6e08667af7bc2d8d9bfdb648351915315ea17645347137"},
+    {file = "coverage-7.4.0-cp310-cp310-win_amd64.whl", hash = "sha256:5b14b4f8768006bfdb6e08667af7bc2d8d9bfdb648351915315ea17645347137"},
     {file = "coverage-7.4.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:04387a4a6ecb330c1878907ce0dc04078ea72a869263e53c72a1ba5bbdf380ca"},
     {file = "coverage-7.4.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:ea81d8f9691bb53f4fb4db603203029643caffc82bf998ab5b59ca05560f4c06"},
     {file = "coverage-7.4.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:74775198b702868ec2d058cb92720a3c5a9177296f75bd97317c787daf711505"},

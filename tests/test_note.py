@@ -23,7 +23,7 @@ def client():
             yield client
 
 def test_request_ping(client):
-    response = client.get("/notes/ping")
+    response = client.get("/payments/ping")
     assert response.status_code == 200
     assert b"pong" in response.data
 
